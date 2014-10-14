@@ -12,3 +12,30 @@ fi
 
 # Customize to your needs...
 
+#No shareable history
+setopt append_history no_inc_append_history no_share_history
+
+#EC2 Stuff
+export JAVA_HOME="$(/usr/libexec/java_home)"
+#export AWS_ACCESS_KEY="<Your AWS Access ID>"
+#export AWS_SECRET_KEY="<Your AWS Secret Key>"
+export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.7.1.0/libexec"
+
+##Boot2docker stuff
+export DOCKER_HOST=tcp://192.168.59.103:2375
+
+#Aliases
+alias sshconfig="vim ~/.ssh/config"
+alias zc="vim ~/.zshrc"
+alias zr="source ~/.zshrc"
+#Pretty output
+alias pretty="pygmentize -g -O encoding=utf-8"
+##Reload MacOS DNS service after editing /etc/hosts
+alias dnsreload="sudo killall -HUP mDNSResponder"
+##Alias for tmuxinator
+alias mux="tmuxinator"
+##Sublime text
+export SUBLIME=/usr/local/bin/subl
+alias st="$SUBLIME $1"
+alias stt="st ."
+
