@@ -11,7 +11,7 @@ if (( ! $+commands[gpg-agent] )); then
 fi
 
 # Set the default paths to gpg-agent files.
-_gpg_agent_conf="$HOME/.gnupg/gpg-agent.conf"
+_gpg_agent_conf="${GNUPGHOME:-$HOME/.gnupg}/gpg-agent.conf"
 _gpg_agent_env="${TMPDIR:-/tmp}/gpg-agent.env"
 
 # Start gpg-agent if not started.
@@ -44,4 +44,3 @@ unset _gpg_agent_{conf,env}
 if [[ -n "$SSH_CONNECTION" ]]; then
   export PINENTRY_USER_DATA='USE_CURSES=1'
 fi
-
