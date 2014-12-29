@@ -17,12 +17,14 @@ setopt append_history no_inc_append_history no_share_history
 
 #EC2 Stuff
 export JAVA_HOME="$(/usr/libexec/java_home)"
-#export AWS_ACCESS_KEY="<Your AWS Access ID>"
-#export AWS_SECRET_KEY="<Your AWS Secret Key>"
+export AWS_ACCESS_KEY="AKIAIBUH4L4ULC47DOEQ"
+export AWS_SECRET_KEY="KFHBNIOKIYcf2zesAqJu9dKGOrYIHtIEQd+NcCQK"
 export EC2_HOME="/usr/local/Cellar/ec2-api-tools/1.7.1.0/libexec"
 
 ##Boot2docker stuff
-export DOCKER_HOST=tcp://192.168.59.103:2375
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Volumes/Extra/pinnokio/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 #Aliases
 alias sshconfig="vim ~/.ssh/config"
@@ -38,4 +40,10 @@ alias mux="tmuxinator"
 export SUBLIME=/usr/local/bin/subl
 alias st="$SUBLIME $1"
 alias stt="st ."
-
+##Brew cask
+alias casker="brew cask"
+#Docker
+alias drc='docker rm $(docker ps -aq)'
+#Git
+alias gst='git status'
+alias gp='git pull '
